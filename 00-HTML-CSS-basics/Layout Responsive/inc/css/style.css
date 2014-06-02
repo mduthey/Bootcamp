@@ -1,0 +1,164 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before, 
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.column-background {
+  position: absolute;
+  background: rgba(0,0,0,0.075);
+  width: 1px;
+  height: 100%;
+}
+
+.column-background.col-1 {
+  left: 16.6%;
+}
+
+.column-background.col-2 {
+  left: 33.3%;
+}
+
+.column-background.col-3 {
+  left: 50%;
+}
+
+.column-background.col-4 {
+  left: 66.6%;
+}
+
+.column-background.col-5 {
+  left: 83.3%;
+}
+
+.column {
+  float: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 48rem){
+  .column.col-xl-1 {
+    width: 33.3%;
+  }
+
+  .column.col-xl-2 {
+    width: 66.7%;
+  }
+}
+
+@media (max-width: 48rem) {
+  .column.col-md-1 {
+    width: 50%;
+  }
+}
+
+p {
+  font-size: 1rem;
+  max-width: 42rem;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #222;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+img {
+  width: 100%;
+}
+
+.greyscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray; /* IE 6-9 */
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.greyscale:hover {
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: grayscale(0);
+  filter: none; /* IE 6-9 */
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.inner-padding-top-bottom {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.outer-margin-bottom {
+  margin-bottom: 5rem;
+}
+
+.black-box {
+  background: #000;
+  color: #FFF;
+
+  height: 5rem;
+  width: 10rem;
+
+  z-index: 200;
+
+  position: fixed;
+  top: 50%;
+  margin-top: -5rem;
+  right: 0;
+  
+  line-height: 5rem;
+}
+
+.black-box.toggle-box {
+  right: -7rem;
+  -webkit-transition:right 1s;
+  transition:right 1s;
+}
+
+.black-box.toggle-box:hover {
+  right: 0;
+  -webkit-transition:right 1s;
+  transition:right 1s;
+}
+
+.border-right {
+  border-right: 1px solid #444;
+}
+
+.inner-padding-none {
+  padding: 0;
+}
+
+.site-container {
+  width: 100%;
+  position: relative;
+}

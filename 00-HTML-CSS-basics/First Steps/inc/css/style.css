@@ -1,0 +1,109 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+/* 
+ * How could you add weight to the global font definition to override all the overrides provided by point c?
+ * - CSS works in cascading order, so it's necessary put the global font definition over definitions provided by point c
+ *
+ * Imagine you have something like class=”oh-no-inline-styles” style=”background:red” and you should change 
+ * the background to green but without changing the inline style, How could you accomplish this?
+ * - To change background without changing the inline style, you can put the clause !important next to background color.
+ * - Example: backgroud: #0F0 !important;
+ */
+
+
+html *{
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  color: #111;
+  box-sizing: border-box;
+}
+
+header,
+footer,
+aside,
+section,
+nav {
+  background: #666;
+}
+
+section > header,
+section > article,
+section > footer {
+  background: #AAA;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+.box-site {
+  width: 960px;
+  
+  padding: 15px;
+  margin: 10px auto;
+
+  background: #222;
+
+  border-radius: 5px;
+}
+
+.box-site > .header,
+.box-site > .content {
+  margin-bottom: 10px;
+}
+
+.header {
+  font-size: 46px;
+}
+
+.footer,
+.sidebar {
+  font-size: 10px;
+}
+
+.content {
+  font-size: 14px;
+  padding: 10px;
+  margin: 0 10px;
+  width: 502px;
+}
+
+.navigation {
+  font-size: 12px;
+}
+
+.navigation,
+.sidebar {
+  width: 200px;
+}
+
+.navigation,
+.content,
+.sidebar {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.content > header,
+.content > article,
+.content > footer {
+  margin-top: 5px;
+}
+
+header,
+footer,
+aside,
+section,
+nav,
+article {
+  border-radius: 5px;
+}
+
+[class$=r] {
+  background: #F0F;
+}
+
+[class*=a]:not([class$=r]) {
+  background: #00F;
+}
