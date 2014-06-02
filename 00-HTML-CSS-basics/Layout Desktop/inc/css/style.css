@@ -4,7 +4,9 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
-*, *:before, *:after {
+*, 
+*:before, 
+*:after {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box;

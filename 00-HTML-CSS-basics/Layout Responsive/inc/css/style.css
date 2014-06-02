@@ -4,7 +4,9 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
-*, *:before, *:after {
+*, 
+*:before, 
+*:after {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -54,7 +56,7 @@ html {
   padding-right: 1rem;
 }
 
-@media (min-width: 48rem){
+@media (min-width: 48rem) {
   .column.col-xl-1 {
     width: 33.3%;
   }
@@ -62,11 +64,17 @@ html {
   .column.col-xl-2 {
     width: 66.7%;
   }
+  .column.col-xl-1:nth-of-type(3n+1) {
+    clear:both;
+  }
 }
 
 @media (max-width: 48rem) {
   .column.col-md-1 {
     width: 50%;
+  }
+  .column.col-md-1:nth-of-type(2n+1) {
+    clear:both;
   }
 }
 
