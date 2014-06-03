@@ -55,11 +55,9 @@ $(document).ready(function(){
 
 
 function showTweets($section){
-  /*var url = 'http://tweetproxy.ap01.aws.af.cm/search',
-      params = { q: 'html5'};
-  $.getJSON(url, params, function(data){*/
-  var url = 'search.json';
-  $.getJSON(url, function(data){
+  var url = 'http://tweetproxy.ap01.aws.af.cm/search?callback=?',
+      params = { q: 'html5' };
+  $.getJSON(url, params, function(data){
     console.log(data);
   }).done(function(data){
       $.each(data.statuses, function(i, tweet){
@@ -77,5 +75,5 @@ function showTweets($section){
           .append($footer);
         $section.append($article);
       })
-    })
+    });
 }
