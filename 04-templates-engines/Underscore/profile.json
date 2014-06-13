@@ -1,0 +1,57 @@
+{
+  "name": "Maximiliano Pablo Duthey",
+  "image": "./max.jpg",
+  "current": "Estudiante en Universidad Nacional del Centro de la Provincia de Buenos Aires",
+  "country": "Argentina",
+  "industry": "Internet",
+  "social": {
+    "linkedin": "http://ar.linkedin.com/pub/maximiliano-duthey/28/a81/176/",
+    "github": "http://github.com/mduthey/",
+    "facebook": "http://www.facebook.com/mduthey/",
+    "skype": "mduthey",
+    "jsfiddle": "http://jsfiddle.net/user/mduthey/"
+  },
+  "experience": [
+  ],
+  "skills": [
+    {"value":"PHP"},
+    {"value":"HTML"},
+    {"value":"CSS"},
+    {"value":"MySQL"},
+    {"value":"AJAX"},
+    {"value":"Apache"},
+    {"value":"WordPress"},
+    {"value":"JSON"},
+    {"value":"Linux"},
+    {"value":"MVC"},
+    {"value":"Pascal"},
+    {"value":"SASS"},
+    {"value":"AngularJS"},
+    {"value":"LESS"},
+    {"value":"Node.js"},
+    {"value":"Haxe"},
+    {"value":"VHDL"},
+    {"value":"Prolog"},
+    {"value":"Java"},
+    {"value":"C/C++"},
+    {"value":"jQuery"},
+    {"value":"Javascript"}
+  ],
+  "languages": [
+    {"lang": "Español", "level": "Competencia bilingüe o nativa"},
+    {"lang": "English"}
+  ],
+  "education": [
+    {
+      "institution": "Universidad Nacional del Centro de la Provincia de Buenos Aires", 
+      "degree": "Ingeniero de Sistemas", 
+      "start": 2011, 
+      "end": 2015
+    },{
+      "institution": "Escuela de Educacion Tecnica N°2", 
+      "degree": "Técnico en informática personal y profesional", 
+      "start": 2005, 
+      "end": 2010
+    }
+  ]
+}

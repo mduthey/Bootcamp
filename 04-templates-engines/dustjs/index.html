@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootcamp HTML5 - Template Engines</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./inc/css/vendor/normalize.css">
+    <link rel="stylesheet" href="./inc/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="./inc/css/style.css">
+  </head>
+  <body>
+    <div class="profile-container">
+    </div>
+
+    <script id="profile-template" type="text/template">
+      <header class="profile-box">
+        <img src="{image}" alt="Profile Image" class="img">
+        <div class="profile-quick-info">
+          <h2 class="profile-name">{name}</h2>
+          <div class="profile-current">
+            {current}
+          </div>
+          <div class="profile-location">
+            <span class="location">{country}</span>
+            <span class="industry">{industry}</span>
+          </div>
+          <div class="profile-contact">
+            {#social.linkedin}
+            <a href="{.}">
+              <i class="fa fa-linkedin-square"></i>
+            </a>
+            {/social.linkedin}
+            {#social.github}
+            <a href="{.}">
+              <i class="fa fa-github-square"></i>
+            </a>
+            {/social.github}
+            {#social.facebook}
+            <a href="{.}">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+            {/social.facebook}
+            {#social.skype}
+            <a href="skype:{.}?userinfo">
+              <i class="fa fa-skype"></i>
+            </a>
+            {/social.skype}
+            {#social.jsfiddle}
+            <a href="{.}">
+              <i class="fa fa-jsfiddle"></i>
+            </a>
+            {/social.jsfiddle}
+          </div>
+        </div>
+      </header>
+
+      {?experience}
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-users"></i> Experiencia</h4>
+        </header>
+        {#experience}
+        <article class="information">
+          <header class="info-header"> {area} </header>
+          {company}
+          <footer class="info-footer"> {start} - {end} </footer>
+        </article>
+        {/experience}
+      </section>
+      {/experience}
+
+      {?skills}
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-book"></i> Aptitudes</h4>
+        </header>
+        <article>
+          {#skills}
+          <span class="skill">{value}</span>
+          {/skills}
+        </article>
+      </section>
+      {/skills}
+
+      {?languages}
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-language"></i> Idiomas</h4>
+        </header>
+        {#languages}
+        <article class="information">
+          <header class="info-header"> {lang} </header>
+          <footer class="info-footer"> {level} </footer>
+        </article>
+        {/languages}
+      </section>
+      {/languages}
+
+      {?education}
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-graduation-cap"></i> Educación</h4>
+        </header>
+        {#education}
+        <article class="studies">
+          <header class="info-header"> {institution} </header>
+          {degree}
+          <footer class="info-footer"> {start} - {end} </footer>
+        </article>
+        {/education}
+      </section>
+      {/education}
+
+    </script>
+
+    <script src="./inc/js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="./inc/js/vendor/dust-full-0.3.0.min.js"></script>
+    <script src="./inc/js/script.js"></script>
+  </body>
+</html>

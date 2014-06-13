@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootcamp HTML5 - Template Engines</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./inc/css/vendor/normalize.css">
+    <link rel="stylesheet" href="./inc/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="./inc/css/style.css">
+  </head>
+  <body>
+    <div class="profile-container">
+    </div>
+
+    <script id="profile-template"  type="text/template">
+      <header class="profile-box">
+        <img src="<%= image %>" alt="Profile Image" class="img">
+        <div class="profile-quick-info">
+          <h2 class="profile-name"><%= name %></h2>
+          <div class="profile-current">
+            <%= current %>
+          </div>
+          <div class="profile-location">
+            <span class="location"><%= country %></span>
+            <span class="industry"><%= industry %></span>
+          </div>
+          <div class="profile-contact">
+            <% if( typeof(social.linkedin) != "undefined" ) { %>
+            <a href="<%= social.linkedin %>">
+              <i class="fa fa-linkedin-square"></i>
+            </a>
+            <% } %>
+            <% if( typeof(social.github) != "undefined" ) { %>
+            <a href="<%= social.github %>">
+              <i class="fa fa-github-square"></i>
+            </a>
+            <% } %>
+            <% if( typeof(social.facebook) != "undefined" ) { %>
+            <a href="<%= social.facebook %>">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+            <% } %>
+            <% if( typeof(social.skype) != "undefined" ) { %>
+            <a href="skype:<%= social.skype %>?userinfo">
+              <i class="fa fa-skype"></i>
+            </a>
+            <% } %>
+            <% if( typeof(social.jsfiddle) != "undefined" ) { %>
+            <a href="<%= social.jsfiddle %>">
+              <i class="fa fa-jsfiddle"></i>
+            </a>
+            <% } %>
+          </div>
+        </div>
+      </header>
+
+      <% if( experience.length > 0 ) { %>
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-users"></i> Experiencia</h4>
+        </header>
+        <% _.each(experience, function(exp){ %>
+        <article class="information">
+          <header class="info-header"> <%= exp.area %> </header>
+          <%= exp.company %>
+          <footer class="info-footer"> <%= exp.start %> - <%= exp.end %> </footer>
+        </article>
+        <% }) %>
+      </section>
+      <% } %>
+
+      <% if( skills.length > 0 ) { %>
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-book"></i> Aptitudes</h4>
+        </header>
+        <article>
+          <% _.each(skills, function(skill){ %>
+          <span class="skill"><%= skill.value %></span>
+          <% }) %>
+        </article>
+      </section>
+      <% } %>
+
+      <% if( languages.length > 0 ) { %>
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-language"></i> Idiomas</h4>
+        </header>
+        <% _.each(languages, function(language){ %>
+        <article class="information">
+          <header class="info-header"> <%= language.lang %> </header>
+          <footer class="info-footer"> <%= language.level %> </footer>
+        </article>
+        <% }) %>
+      </section>
+      <% } %>
+
+      <% if( education.length > 0 ) { %>
+      <section class="profile-box">
+        <header class="box-header">
+          <h4><i class="fa fa-graduation-cap"></i> Educación</h4>
+        </header>
+        <% _.each(education, function(inst){ %>
+        <article class="studies">
+          <header class="info-header"> <%= inst.institution %> </header>
+          <%= inst.degree %>
+          <footer class="info-footer"> <%= inst.start %> - <%= inst.end %> </footer>
+        </article>
+        <% }) %>
+      </section>
+      <% } %>
+    </script>
+
+    <script src="./inc/js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="./inc/js/vendor/underscore-min.js"></script>
+    <script src="./inc/js/script.js"></script>
+  </body>
+</html>
