@@ -4,7 +4,7 @@ require.config({
   }
 });
 
-define(['./modules/Movie', './modules/Director', 'jquery'],function(Movie, Director, $){
+require(['./modules/Movie', './modules/Director', 'jquery'],function(Movie, Director, $){
   var jossWhedon = new Director('Joss Whedon');
   jossWhedon.set('quotes', ['Loneliness is about the scariest thing out there.', 
                             'Who is to say who is the villain and who is the hero? Probably the dictionary.', 
