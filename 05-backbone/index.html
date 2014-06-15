@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootcamp HTML5 - Backbone</title>
+    <link rel="stylesheet" href="./inc/css/vendor/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./inc/css/style.css">
+  </head>
+  <body>  
+    <section id="show-movies">
+      <div class="box-form">
+        <div class="form-add">
+          <div class="row">
+            <div class="col-xl-1of6 col-sm-6of6">
+              Poster
+            </div>
+            <div class="col-xl-5of6 col-sm-6of6">
+              <input id="new-movie-poster" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-1of6 col-sm-6of6">
+              Title
+            </div>
+            <div class="col-xl-5of6 col-sm-6of6">
+              <input id="new-movie-title" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-1of6 col-sm-6of6">
+              Year
+            </div>
+            <div class="col-xl-5of6 col-sm-6of6">
+              <input id="new-movie-year" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-1of6 col-sm-6of6">
+              Genres
+            </div>
+            <div class="col-xl-5of6 col-sm-6of6">
+              <input id="new-movie-genres" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-1of6 col-sm-6of6">
+              Director
+            </div>
+            <div class="col-xl-5of6 col-sm-6of6">
+              <input id="new-movie-director" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-1of6 col-sm-6of6">
+              Synopsis
+            </div>
+            <div class="col-xl-5of6 col-sm-6of6">
+              <textarea id="new-movie-synopsis" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-6of6">
+              <button class="create">Create</button>
+              <button class="reset">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-text">
+          A<br>
+          d<br>
+          d<br>
+          <br>
+          N<br>
+          e<br>
+          w<br>
+          <br>
+          M<br>
+          o<br>
+          v<br>
+          i<br>
+          e<br>
+        </div>
+      </div>
+      
+    </section>
+    
+    <script data-main="./inc/js/app" src="./inc/js/vendor/require.js"></script>
+
+    <!-- Templates -->
+    <script id="movie-view" type="text/template">
+      <div class="movie-info">
+        <img src="<%= poster %>" class="img">
+        <a class="remove">X</a>
+        <header>
+          <h3 class="inline"><%= title %></h3> 
+          <h5 class="inline">(<%= year %>)</h5>
+        </header>
+        <p>
+          <h4>Genres: </h4>
+          <% _.each(genres, function(genre){ %>
+          <span class="genre"><%= genre %></span> 
+          <% }) %>
+        </p>
+        <p>
+          <h4>Director:</h4>
+          <%= director %>
+        </p>
+        <p>
+          <h4>Synopsis:</h4>
+          <%= synopsis %>
+        </p>
+      </div>
+      <div class="edit">
+        <div class="row">
+          <div class="col-xl-1of6 col-sm-6of6">
+            Poster
+          </div>
+          <div class="col-xl-5of6 col-sm-6of6">
+            <input id="movie-poster" type="text" value="<%= poster %>">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-1of6 col-sm-6of6">
+            Title
+          </div>
+          <div class="col-xl-5of6 col-sm-6of6">
+            <input id="movie-title" type="text" value="<%= title %>">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-1of6 col-sm-6of6">
+            Year
+          </div>
+          <div class="col-xl-5of6 col-sm-6of6">
+            <input id="movie-year" type="text" value="<%= year %>">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-1of6 col-sm-6of6">
+            Genres
+          </div>
+          <div class="col-xl-5of6 col-sm-6of6">
+            <input id="movie-genres" type="text" value="<%= genres %>">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-1of6 col-sm-6of6">
+            Director
+          </div>
+          <div class="col-xl-5of6 col-sm-6of6">
+            <input id="movie-director" type="text" value="<%= director %>">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-1of6 col-sm-6of6">
+            Synopsis
+          </div>
+          <div class="col-xl-5of6 col-sm-6of6">
+            <textarea id="movie-synopsis" rows="3"><%= synopsis %></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-6of6">
+            <button class="save">Save</button>
+            <button class="cancel">Cancel</button>
+          </div>
+        </div>
+
+      </div>
+    </script>
+  </body>
+</html>
