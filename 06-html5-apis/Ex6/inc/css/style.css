@@ -1,0 +1,21 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+*, 
+*:before, 
+*:after {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+}
+
+.paint_area {
+  width: 100%;
+  height: 100%;
+}

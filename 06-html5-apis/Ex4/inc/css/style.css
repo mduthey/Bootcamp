@@ -1,0 +1,46 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+*, 
+*:before, 
+*:after {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  background: #333;
+}
+
+.inputArea {
+  float: left;
+  width: 200px;
+}
+
+.resultArea{
+  width: calc(100% - 210px);
+  float: right;
+}
+
+.sendData {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.status {
+  border: 3px dashed #aaa;
+  padding: 0.5rem;
+  background: #333;
+  width: 100%;
+  height: 250px;
+  overflow-y: auto;
+  color: #FFF;
+}
+
+.btnDisconnect {
+  display: none;
+}
